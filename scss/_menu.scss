@@ -1,0 +1,36 @@
+//Main menu button
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .menu-btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    @include easeOut;
+  }
+  //Rotatate into X with main lines
+  &.close {
+    transform: rotate(180deg);
+
+    .menu-btn-line {
+      //Show transition first link
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      //Hide second link
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      //Show transition third link
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
