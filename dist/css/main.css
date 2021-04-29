@@ -20,6 +20,77 @@
     .menu-btn.close .menu-btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-all-links {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    overflow: hidden; }
+  .menu-all-links {
+    margin: 0;
+    padding: 0;
+    background: #373737;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-all-links.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    background: #444;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .avtar {
+      height: 250px;
+      width: 250px;
+      background: url(../imgs/avtar.jpeg) no-repeat;
+      border-radius: 50%;
+      border: 3px solid #eece1a;
+      background-size: contain; }
+  .menu-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-item.current > a {
+      color: #eece1a; }
+  .menu .menu-item-link {
+    padding: 1rem 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .menu-item-link:hover {
+      color: #eece1a; }
+
+.menu-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.menu-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.menu-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.menu-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
 * {
   box-sizing: border-box; }
 

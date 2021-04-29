@@ -34,3 +34,85 @@
     }
   }
 }
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+  }
+  &-branding,
+  &-all-links {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    overflow: hidden;
+  }
+  &-all-links {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  &-branding {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+    &.show {
+      //slide in from bottom
+      transform: translate3d(0, 0, 0);
+    }
+    .avtar {
+      height: 250px;
+      width: 250px;
+      background: url(../imgs/avtar.jpeg) no-repeat;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
+      background-size: contain;
+    }
+  }
+  &-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+    &.show {
+      //slide in from right
+      transform: translate3d(0, 0, 0);
+    }
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+  .menu-item-link {
+    padding: 1rem 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    @include easeOut;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+//delay link transition
+@for $x from 1 through 4 {
+  .menu-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
